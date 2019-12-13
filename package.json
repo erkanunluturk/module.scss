@@ -1,0 +1,27 @@
+{
+  "name": "sass-converter",
+  "version": "1.0.0",
+  "description": "sass module converter",
+  "main": "module.scss",
+  "scripts": {
+    "test": "sass --no-source-map test.scss:test.css"
+  },
+  "keywords": [
+    "sass",
+    "module",
+    "converter"
+  ],
+  "author": "erkan UNLUTURK",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.23.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erkanunluturk/sass-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erkanunluturk/sass-converter/issues"
+  },
+  "homepage": "https://github.com/erkanunluturk/sass-converter#readme"
+}

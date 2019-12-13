@@ -1,0 +1,21 @@
+@use "module";
+
+$props: (
+  prefix: testModule,
+  mediaprefix: false,
+  breakpoint: false
+);
+
+@function test() {
+  @return(
+    testclass: (
+      display: block,
+      font-size: 1rem
+    ),
+    testclass2: (
+      display: grid
+    )
+  );
+}
+
+@include module.export(test(), $props);

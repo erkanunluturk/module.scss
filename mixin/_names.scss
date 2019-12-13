@@ -1,0 +1,15 @@
+// sass-converter | names
+
+@function names($breakpoint:false, $prefix:false, $name:false) {
+  $result: &;
+  @if $breakpoint {
+    $result: $breakpoint + '-';
+  }
+  @if $prefix {
+    $result: $result + $prefix;
+  }
+  @if $name {
+    $result: $result + $name;
+  }
+  @return $result;
+}

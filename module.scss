@@ -1,0 +1,42 @@
+// sass-converter v1.0.0
+// github.com/erkanunluturk/sass-converter
+// MIT License
+
+@use "mixin";
+
+@mixin export($classes, $props) {
+  // if there is a breakpoint
+  @if map-get($props, breakpoint) {
+    // get breakpoint
+    @each $breakpointName in map-get($props, breakpoint) {
+      // get media query
+      @include mixin.getQuery($breakpointName) {
+        // get classes
+        @each $className, $classVars in $classes {
+          // print class
+          @include mixin.getClass(
+            mixin.names(
+              if(map-get($props, mediaprefix), $breakpointName, null),
+              map-get($props, prefix),
+              $className
+            ),
+            $classVars
+          );
+        }
+      }
+    }
+  } @else {
+    // get classes
+    @each $className, $classVars in $classes {
+      // prin class
+      @include mixin.getClass(
+        mixin.names(
+          null,
+          map-get($props, prefix),
+          $className
+        ),
+        $classVars
+      );
+    }
+  }
+}
