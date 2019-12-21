@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/erkanunluturk/sass-converter/issues"
   },
-  "homepage": "https://github.com/erkanunluturk/sass-converter#readme"
+  "homepage": "https://github.com/erkanunluturk/sass-converter#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
