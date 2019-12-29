@@ -24,13 +24,19 @@ Populate ./sass/utilities/display.scss inside your project:
 ```scss
 @use "sass-converter/module";
 
-$props: (
-  // add module name
-  prefix: display,
+///////////////////////////////
+$name: display;
+$version: 1.0;
+$author: erkanunluturk;
+///////////////////////////////
+
+$config: (
+  // add class prefix
+  prefix: $name,
   // add prefix of media query
   mediaprefix: false, // or true
-  // No media query for `xs` since this is the default in Bootstrap
-  // Add null for xs
+  // no media query for `xs` since this is the default in Bootstrap
+  // add null for xs
   breakpoint: false // sm or (null, sm, md, lg, xl)
 );
 
@@ -45,7 +51,7 @@ $props: (
   );
 }
 
-@include module.export(display(), $props);
+@include module.export(display(), $config);
 ```
 and then just run:
 ```bash

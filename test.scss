@@ -1,7 +1,13 @@
 @use "module";
 
-$props: (
-  prefix: testModule,
+///////////////////////////////
+$name: test;
+$version: 1.0;
+$author: erkanunluturk;
+///////////////////////////////
+
+$config: (
+  prefix: $name,
   mediaprefix: false,
   breakpoint: false
 );
@@ -18,4 +24,4 @@ $props: (
   );
 }
 
-@include module.export(test(), $props);
+@include module.export(test(), $config);
