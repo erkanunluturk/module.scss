@@ -1,0 +1,55 @@
+@use "../module";
+
+///////////////////////////////
+$name: multiple;
+$version: 1.0;
+$author: erkanunluturk;
+///////////////////////////////
+
+$config: (
+  prefix: $name,
+  mediaprefix: false,
+  breakpoint: false
+);
+
+@function multipleTest() {
+  // classes 1
+  $classes1: (
+    classes1_class1: (
+      display: block
+    ),
+    classes1_class2: (
+      display: block
+    )
+  );
+  // classes 2
+  $classes2: (
+    classes2_class1: (
+      display: block
+    ),
+    classes2_class2: (
+      display: block
+    )
+  );
+  // classes 3
+  $classes3: (
+    classes3_class1: (
+      display: block
+    ),
+    classes3_class2: (
+      display: block
+    )
+  );
+  // classes 4
+  $classes4: (
+    classes4_class1: (
+      display: block
+    ),
+    classes4_class2: (
+      display: block
+    )
+  );
+  @return module.collect($classes1, $classes2, $classes3, $classes4);
+}
+
+@include module.export(multipleTest(), $config);

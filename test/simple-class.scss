@@ -1,7 +1,7 @@
-@use "module";
+@use "../module";
 
 ///////////////////////////////
-$name: test;
+$name: simple;
 $version: 1.0;
 $author: erkanunluturk;
 ///////////////////////////////
@@ -12,7 +12,7 @@ $config: (
   breakpoint: false
 );
 
-@function test() {
+@function simpleTest() {
   @return(
     testclass: (
       display: block,
@@ -24,4 +24,4 @@ $config: (
   );
 }
 
-@include module.export(test(), $config);
+@include module.export(simpleTest(), $config);

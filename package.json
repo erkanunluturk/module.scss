@@ -4,7 +4,7 @@
   "description": "sass module converter",
   "main": "module.scss",
   "scripts": {
-    "test": "sass --no-source-map test.scss:test.css"
+    "test": "sass --no-source-map test:test"
   },
   "keywords": [
     "sass",
