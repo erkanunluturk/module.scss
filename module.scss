@@ -4,11 +4,15 @@
 
 @use "mixin";
 
-@mixin export($classes, $props) {
+// module exports
+//
+// $classes: map
+// $config: map
+@mixin export($classes, $config) {
   // if there is a breakpoint
-  @if map-get($props, breakpoint) {
+  @if map-get($config, breakpoint) {
     // get breakpoint
-    @each $breakpointName in map-get($props, breakpoint) {
+    @each $breakpointName in map-get($config, breakpoint) {
       // get media query
       @include mixin.getQuery($breakpointName) {
         // get classes
@@ -16,8 +20,8 @@
           // print class
           @include mixin.getClass(
             mixin.names(
-              if(map-get($props, mediaprefix), $breakpointName, null),
-              map-get($props, prefix),
+              if(map-get($config, mediaprefix), $breakpointName, null),
+              map-get($config, prefix),
               $className
             ),
             $classVars
@@ -32,7 +36,7 @@
       @include mixin.getClass(
         mixin.names(
           null,
-          map-get($props, prefix),
+          map-get($config, prefix),
           $className
         ),
         $classVars
