@@ -14,7 +14,7 @@ $breakpoints: (
   xl: 1200
 );
 
-@mixin getQuery($name) {
+@mixin get($name) {
   @if map-has-key($breakpoints, $name) {
     @if map-get($breakpoints, $name) != 0 {
       @media (min-width: #{map-get($breakpoints, $name)}px) {

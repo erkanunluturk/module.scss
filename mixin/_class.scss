@@ -1,6 +1,6 @@
 // sass-converter | class
 
-@mixin getClass($name, $vars) {
+@mixin get($name, $vars) {
   .#{$name} {
     @each $var1, $var2 in $vars {
       #{$var1}: #{$var2};

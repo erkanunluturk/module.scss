@@ -1,6 +1,6 @@
 // sass-converter | names
 
-@function names($breakpoint:false, $prefix:false, $name:false) {
+@function merge($breakpoint:false, $prefix:false, $name:false) {
   $result: &;
   @if $breakpoint {
     $result: $breakpoint + '-';

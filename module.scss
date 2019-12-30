@@ -2,7 +2,9 @@
 // github.com/erkanunluturk/sass-converter
 // MIT License
 
-@use "mixin";
+@use "mixin/class";
+@use "mixin/media";
+@use "mixin/names";
 
 // module exports
 //
@@ -14,12 +16,12 @@
     // get breakpoint
     @each $breakpointName in map-get($config, breakpoint) {
       // get media query
-      @include mixin.getQuery($breakpointName) {
+      @include media.get($breakpointName) {
         // get classes
         @each $className, $classVars in $classes {
           // print class
-          @include mixin.getClass(
-            mixin.names(
+          @include class.get(
+            names.merge(
               if(map-get($config, mediaprefix), $breakpointName, null),
               map-get($config, prefix),
               $className
@@ -33,8 +35,8 @@
     // get classes
     @each $className, $classVars in $classes {
       // prin class
-      @include mixin.getClass(
-        mixin.names(
+      @include class.get(
+        names.merge(
           null,
           map-get($config, prefix),
           $className
