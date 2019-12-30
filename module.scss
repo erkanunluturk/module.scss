@@ -6,6 +6,19 @@
 @use "mixin/media";
 @use "mixin/names";
 
+// module map collect
+// taken from the https://gist.github.com/bigglesrocks/d75091700f8f2be5abfe
+// thanks to @bigglesrocks
+//
+// $maps: all maps
+@function collect($maps...) {
+  $collection: ();
+  @each $map in $maps {
+    $collection: map-merge($collection, $map);
+  }
+  @return $collection;
+}
+
 // module exports
 //
 // $classes: map
