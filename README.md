@@ -147,3 +147,6 @@ css output: css/utilities/flex.css
   align-items: flex-end;
 }
 ```
+
+### Thanks
+Thanks to [Jessica Biggs](https://gist.github.com/bigglesrocks/d75091700f8f2be5abfe) for more than two maps in one module
